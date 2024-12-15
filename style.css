@@ -194,11 +194,11 @@
 
        align-items: center;
 
-       justify-content: space-between;
+       justify-content: space-around;
 
        margin-top: 1.4rem;
 
-       margin-left: 2rem;
+       margin-left: 1rem;
 
    }
 
