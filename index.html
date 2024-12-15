@@ -3,240 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp "
-    rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
-      <!-- style sheet eme -->
-    <link rel="stylesheet" href="style.css">
+    <title>LOG IN SIGN UP</title>
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- STYLE -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-    <div class="container">
-        <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="img/logo.png" alt=logo">
-                    <h2 class="stock_up">Stock Up</h2>
+<body>
+   <div class="form-container">
+    <div class="col col-1"> 
+        <div class="image-layer">
+            <img src="assets/img/logo cloud.png" class="form-image-main">
+
+        </div>
+        <p class="featured-words">Copyright<span>@ STOCK UP</span> By Code Benders, <span>"Just give me my package"</span>
+        </p>
+    </div>
+    
+
+         <div class="col col-2">
+            <div class="btn-box">
+                <button class="btn btn-1" id="login">Log in</button>
+                <button class="btn btn-2" id="register">Sign up</button>
+            </div>
+            <!-- Log In form na  -->
+
+            <div class="login-form">
+                <div class="form-title">
+                    <span>Log In</span>
                 </div>
-                 <div class = "close" id = "close-btn">
-                    <span class="material-icons-sharp">close</span>
-                 </div>
+
+
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Username/ID" required>
+                        <i class="bx bx-user icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Password" required>
+                        <i class="bx bx-lock-alt icon"></i>
+                    </div>
+    
+                    <!-- <div class="forgot-pass">
+                        <a href="#">Forgot password</a>
+                    </div> -->
+
+
+                    <div class="input-box">
+                        <button class="input-submit">
+                            <span> Sign In</span>
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </button>
+                    </div>
+                      <div class="Sign_link">
+                        <p>Do not have an account yet? <a href="#">Sign Up Here</a></p>
+
+                    </div> 
+                    
+                </div>
             </div>
 
-            <div class="sidebar">
-                <a href="index.html" class="active">
-                    <span class="material-icons-sharp">grid_view</span>
-                    <h3>Dashbord</h3>
-                </a>
+                        
 
-                <a href="inventory.html">
-                    <span class="material-icons-sharp">inventory</span>
-                    <h3>Inventory</h3>
-                </a>
+              <!-- SIGN UP NA  -->
 
-                <a href="stockreport.html" >
-                    <span class="material-icons-sharp">bar_chart</span>
-                    <h3>Stock Report</h3>
-                </a>
+              <div class="register-form">
+                <div class="form-title">
+                    <span>Create an Account</span>
+                </div>
 
-                <a href="logintracker.html" >
-                    <span class="material-icons-sharp">track_changes</span>
-                    <h3>Login Tracker</h3>
-                </a>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Full Name" required>
+                        <i class="bx bx-user icon"></i>
+                    </div>
 
-                <a href="help.html" >
-                    <span class="material-icons-sharp">help</span>
-                    <h3>Help Support</h3>
-                </a>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Username/ID" required>
+                        <i class='bx bx-id-card icon'></i>
+                    </div>
 
-                <a href="#">
-                    <span class="material-icons-sharp">logout</span>
-                    <h3>Logout</h3>
-                </a>
-            </div>
-        </aside>
-        <!--_----------------- OA END OF NAV BAR -------------------------- -->
-    <main>
-          <h1 class="dash-text">Dashboard</h1>
-           <div class="date">
-             <input type="date">
-           </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Password" required>
+                        <i class="bx bx-lock-alt icon"></i>
+                    </div>
 
-           <div class="insights">
-            <div class="sales">
-                  <span class="material-icons-sharp"> analytics </span>
-                <div class="middle">
-                    <div class="left">
-                        <h3>Total Stocks</h3>
-                        <h2>800 stocks</h2>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Confirm Password" required>
+                        <i class="bx bx-lock-alt icon"></i>
+                    </div>
+                    <div class="forgot-pass">
+                        <h4>Admin</h4>
+                        <input type="checkbox" id="admin-checkbox" class="admin-checkbox">
+                    
+                        <h4 id="code-label" class="code-label">Code</h4>
+                        <input type="input" id="code-input" class="input-field-code">
+                    </div>
+                    
+                    <script>
+                        const checkbox = document.getElementById('admin-checkbox');
+                        const codeLabel = document.getElementById('code-label');
+                        const codeInput = document.getElementById('code-input');
+                    
+                        // Initially hide elements
+                        codeLabel.style.opacity = '0';
+                        codeLabel.style.visibility = 'hidden';
+                        codeInput.style.opacity = '0';
+                        codeInput.style.visibility = 'hidden';
+                    
+                        checkbox.addEventListener('change', function() {
+                            if (checkbox.checked) {
+                                // Show elements with fade-in transition
+                                codeLabel.style.transition = 'opacity 0.5s ease, visibility 0s 0.5s';
+                                codeLabel.style.opacity = '1';
+                                codeLabel.style.visibility = 'visible';
+                    
+                                codeInput.style.transition = 'opacity 0.5s ease, visibility 0s 0.5s';
+                                codeInput.style.opacity = '1';
+                                codeInput.style.visibility = 'visible';
+                            } else {
+                                // Hide elements with fade-out transition
+                                codeLabel.style.transition = 'opacity 0.5s ease, visibility 0s 0.5s';
+                                codeLabel.style.opacity = '0';
+                                codeLabel.style.visibility = 'hidden';
+                    
+                                codeInput.style.transition = 'opacity 0.5s ease, visibility 0s 0.5s';
+                                codeInput.style.opacity = '0';
+                                codeInput.style.visibility = 'hidden';
+                            }
+                        });
+                    </script>
+
+                    <div class="input-box">
+                        <button class="input-submit">
+                            <span> Sign In</span>
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-            <!-- end of ka emehan sales track -->
-
-            <!-- start of income  -->
-            <div class="expenses">
-                <span class="material-icons">trending_up</span>
-              <div class="middle">
-                  <div class="left">
-                      <h3>Total High Stocks</h3>
-                      <h2>400 stocks</h2>
-                  </div>
-              </div>
-
-          </div>
-
-          <!-- 2nd card total stocks -->
-
-          <div class="income">
-            <span class="material-icons"> trending_down</span>
-          <div class="middle">
-              <div class="left">
-                  <h3>Total Low Stock</h3>
-                  <h2>400 stocks </h2>
-              </div>
-          </div>
-      </div>
-
-      <!-- 3nd card INCOME  -->
-</div>
-    <!--   INVENTORY TRACKER  -->
-    <div class="recent-orders">
-        <h2> Inventory</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Product Id</th>
-                    <th>Product</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
-                    <th>Status</th>
-                <tr></tr>
-            </tr>
-         </thead>
-        <tbody>
-            <tr>
-                <td>101</td>
-                <td>Pencil</td>
-                <td>Writing Supply</td>
-                <td>11</td>
-                <td class="warning">Low</td>
-            </tr>
-            <tr>
-                <td>101</td>
-                <td>Pencil</td>
-                <td>Writing Supply</td>
-                <td>11</td>
-                <td class="warning">Low</td>
-            </tr>
-            <tr>
-                <td>101</td>
-                <td>Pencil</td>
-                <td>Writing Supply</td>
-                <td>11</td>
-                <td class="warning">Low</td>
-            </tr>
-            <tr>
-                <td>101</td>
-                <td>Pencil</td>
-                <td>Writing Supply</td>
-                <td>11</td>
-                <td class="warning">Low</td>
-            </tr>
-            <tr>
-                <td>101</td>
-                <td>Pencil</td>
-                <td>Writing Supply</td>
-                <td>11</td>
-                <td class="warning">Low</td>
-            </tr>
-        </tbody>
-     </table>
-     <a href="#"> Show All</a>
+         </div>
     </div>
-    <div class = "right">
-        <div class= "top">
-            <button id ="menu-btn">
-                <span class="material-icons-sharp">menu</span>
-            </button>
-        </div>
-    </div>
-        <!-- End of top -->
-         <!-- tracker  -->
-         <div class="tracker">
-        <h2> Login tracker</h2>
-        <table>
-                 <thead>
-                   <tr>
-                     <th>Staff ID</th>
-                     <th>Name</th>
-                     <th>Time In</th>
-                     <th>Time Out</th>
-                   </tr>
-                 </thead>
-                 <tbody>
-                   <tr>
-                       <td>001</td>
-                       <td>Janico Sorio</td>
-                       <td>November 23, 2024 08:00 AM</td>
-                       <td>November 23, 2024 04:30 PM</td>
-                   </tr>
-                   <tr>
-                       <td>002</td>
-                       <td>Catherine Mon</td>
-                       <td>November 23, 2024 08:15 AM</td>
-                       <td>November 23, 2024 05:00 PM</td>
-                   </tr>
-                   <tr>
-                       <td>003</td>
-                       <td>Justin Del Rosario</td>
-                       <td>November 23, 2024 09:00 AM</td>
-                       <td>November 23, 2024 06:00 PM</td>
-                   </tr>
-                   <tr>
-                       <td>004</td>
-                       <td>Kent Ann Ecal</td>
-                       <td>November 23, 2024 08:30 AM</td>
-                       <td>November 23, 2024 05:15 PM</td>
-                   </tr>
-                   <tr>
-                       <td>005</td>
-                       <td>Johannes De Jesus</td>
-                       <td>November 23, 2024 08:30 AM</td>
-                       <td>November 23, 2024 05:15 PM</td>
-                   </tr>
-               </tbody>
-               </table>
-     <a href="#"> Show All</a>
-
-
-
-    </div>
-    </main>
-    <!-- END OF MAIN -->
-    <!-- Profile on top  -->
-
-</div>
-            <!-- End Recent  -->
-
-
-    <script src="./order.js"></script>
-    <script>
-const sideMenu = document.querySelector("aside");
-const menuBtn = document.querySelector("#menu-btn");
-const closeBtn = document.querySelector("#close-btn");
-
-menuBtn.addEventListener("click", () => {
-    sideMenu.classList.add("show");
-});
-
-closeBtn.addEventListener("click", () => {
-    sideMenu.classList.remove("show");
-});
-    </script>
-
+   
+    <script src="assets/js/main.js"></script>
 </body>
-
-
-
 </html>
